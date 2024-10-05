@@ -1,25 +1,20 @@
 import React from "react";
 import { ThemeProvider } from "@mui/material/styles";
-import { caidoTheme, StyledSplitter, StyledBox } from "caido-material-ui";
-import { Typography } from "@mui/material";
+import { caidoTheme, StyledSplitter } from "caido-material-ui";
 import "allotment/dist/style.css";
 import "./styles/style.css";
+import { ThemesList } from "@/components/ThemesList";
+import { ThemePreview } from "@/components/ThemePreview";
+import { useThemeStore } from "@/stores/themes";
 
 export const App = () => {
+  const { selectedThemeID: selectedThemeName } = useThemeStore();
+  
   return (
     <ThemeProvider theme={caidoTheme}>
       <StyledSplitter>
-        <StyledBox className="p-5">
-          <Typography variant="h5">Hello World</Typography>
-        </StyledBox>
-        <StyledSplitter vertical>
-          <StyledBox className="p-5">
-            <Typography variant="h5">Caido is awesome</Typography>
-          </StyledBox>
-          <StyledBox className="p-5">
-            <Typography variant="h5">Have a great day!</Typography>
-          </StyledBox>
-        </StyledSplitter>
+        <ThemesList />
+        {selectedThemeName && <ThemePreview />}
       </StyledSplitter>
     </ThemeProvider>
   );

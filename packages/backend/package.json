@@ -1,8 +1,8 @@
 {
   "name": "backend",
-  "version": "0.1.0",
-  "description": "StarterKit plugin for Caido",
-  "author": "Caido Labs Inc. <dev@caido.io>",
+  "version": "1.0.0",
+  "description": "Backend for Caido Themes",
+  "author": "bebiks",
   "license": "CC0-1.0",
   "type": "module",
   "types": "src/index.ts",

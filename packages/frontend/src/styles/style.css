@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    /* Base Colors */
+    --caidothemes-primary-dark: #25272d;
+    --caidothemes-primary-light: #353942;
+    --caidothemes-subtle: #2f323a;
+
+    /* Button Colors */
+    --caidothemes-btn-primary-bg: var(--c-bg-primary);
+    --caidothemes-btn-primary-text: #ffffff;
+
+    --caidothemes-btn-secondary-bg: var(--c-bg-secondary);
+    --caidothemes-btn-secondary-text: #ffffff;
+
+    --caidothemes-btn-tertiary-bg: #var(--c-bg-tertiary);
+    --caidothemes-btn-tertiary-text: #ffffff;
+
+    /* Caido CSS Overrides */
+    --c-gray-900: var(--caidothemes-primary-dark) !important;
+    --c-gray-800: var(--caidothemes-subtle) !important;
+    --p-gray-900: var(--caidothemes-primary-dark) !important;
+    --p-gray-800: var(--caidothemes-subtle) !important;
+}
+
+.c-table__item-row[data-is-even=false],
+.c-table__header-row {
+    background-color: var(--caidothemes-primary-light) !important;
+}
+
+[data-variant="tertiary"][data-outline="false"] .c-button__input {
+    background-color: var(--caidothemes-btn-tertiary-bg) !important;
+    color: var(--caidothemes-btn-tertiary-text) !important;
+}
+
+[data-variant="secondary"][data-outline="false"] .c-button__input {
+    background-color: var(--caidothemes-btn-secondary-bg) !important;
+    color: var(--caidothemes-btn-secondary-text) !important;
+}
+
+[data-variant="primary"][data-outline="false"] .c-button__input {
+    background-color: var(--caidothemes-btn-primary-bg) !important;
+    color: var(--caidothemes-btn-primary-text) !important;
+}

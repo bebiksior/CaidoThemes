@@ -1,28 +1,28 @@
 {
-  "id": "starterkit-plugin",
-  "name": "StarterKit Plugin",
-  "version": "0.1.0",
-  "description": "This is a starterkit plugin",
+  "id": "caido-themes",
+  "name": "Caido Themes",
+  "version": "1.0.0",
+  "description": "A plugin for managing and customizing themes in Caido",
   "author": {
-    "name": "Caido Labs Inc.",
-    "email": "dev@caido.io",
-    "url": "https://github.com/caido/starterkit-plugin"
+    "name": "bebiks",
+    "email": "bebiks@cvssadvisor.com",
+    "url": "https://github.com/bebiks/caidothemes"
   },
   "plugins": [
     {
       "kind": "frontend",
-      "id": "caido-extra-commands",
-      "name": "Extra Commands",
+      "id": "caido-themes-frontend",
+      "name": "Caido Themes: Frontend",
       "entrypoint": "frontend/script.js",
       "style": "frontend/style.css",
       "backend": {
-        "id": "caido-extra-commands-backend"
+        "id": "caido-themes-backend"
       }
     },
     {
       "kind": "backend",
-      "id": "caido-extra-commands-backend",
-      "name": "Extra Commands Backend",
+      "id": "caido-themes-backend",
+      "name": "Caido Themes: Backend",
       "runtime": "javascript",
       "entrypoint": "backend/script.js"
     }

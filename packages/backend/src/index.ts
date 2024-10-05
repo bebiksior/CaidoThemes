@@ -1,17 +1,34 @@
-import { Body } from "caido:utils";
-import { SDK, DefineAPI } from "caido:plugin";
+import { DefineAPI } from "caido:plugin";
+import { CaidoBackendSDK } from "@/types";
+import DatabaseManager from "@/database/database";
+import { ThemesStore } from "@/store/themes";
+import { addTheme, getTheme, getThemes, removeTheme, updateTheme, resetThemes } from "./api/themes";
 
 export type { BackendEvents } from "./types";
 
 export type API = DefineAPI<{
-  generateNumber: typeof generateNumber;
+  getThemes: typeof getThemes;
+  addTheme: typeof addTheme;
+  removeTheme: typeof removeTheme;
+  getTheme: typeof getTheme;
+  updateTheme: typeof updateTheme;
+  resetThemes: typeof resetThemes;
 }>;
 
-function generateNumber(sdk: SDK, min: number, max: number): number {
-  sdk.console.log(new Body("test"));
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
+export async function init(sdk: CaidoBackendSDK): Promise<void> {
+  sdk.api.register("getThemes", getThemes);
+  sdk.api.register("addTheme", addTheme);
+  sdk.api.register("removeTheme", removeTheme);
+  sdk.api.register("getTheme", getTheme);
+  sdk.api.register("updateTheme", updateTheme);
+  sdk.api.register("resetThemes", resetThemes);
 
-export function init(sdk: SDK<API>) {
-  sdk.api.register("generateNumber", generateNumber);
+  const dbManager = new DatabaseManager(sdk);
+  const setup = await dbManager.init();
+
+  ThemesStore.init(dbManager, sdk);
+  if (setup) {
+    sdk.console.log("First time CaidoThemes launch, adding default themes");
+    await ThemesStore.get().resetThemes();
+  }
 }
