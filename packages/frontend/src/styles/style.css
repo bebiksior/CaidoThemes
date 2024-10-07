@@ -30,6 +30,10 @@
     background-color: var(--caidothemes-primary-light) !important;
 }
 
+.c-table__item-row:hover {
+    background-color: var(--caidothemes-primary-dark) !important;
+}
+
 [data-variant="tertiary"][data-outline="false"] .c-button__input {
     background-color: var(--caidothemes-btn-tertiary-bg) !important;
     color: var(--caidothemes-btn-tertiary-text) !important;
