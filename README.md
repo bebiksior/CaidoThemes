@@ -1,5 +1,7 @@
 # Caido Themes
 A simple plugin for managing and customizing themes in Caido.
+![image](https://github.com/user-attachments/assets/39e257b1-dae0-4bd9-900f-4b65edd3f4d1)
+
 
 ## Installation [Recommended]
 1. Open Caido and go to the Plugins page.
