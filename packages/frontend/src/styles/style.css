@@ -23,6 +23,10 @@
     --c-gray-800: var(--caidothemes-subtle) !important;
     --p-gray-900: var(--caidothemes-primary-dark) !important;
     --p-gray-800: var(--caidothemes-subtle) !important;
+
+    --p-surface-800: var(--caidothemes-subtle) !important;
+    --p-surface-900: var(--caidothemes-primary-light) !important;
+    --p-surface-950: var(--caidothemes-primary-dark) !important;
 }
 
 .c-table__item-row[data-is-even=false],
