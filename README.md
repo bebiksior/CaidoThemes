@@ -10,7 +10,7 @@ A simple plugin for managing and customizing themes in Caido.
 4. Done!
 
 ## Installation [Manually]
-1. Go to the [releases page](https://github.com/bebiks/caidothemes/releases) and download the latest version of the plugin (`plugin_package.zip` file)
+1. Go to the [releases page](https://github.com/bebiksior/CaidoThemes/releases) and download the latest version of the plugin (`plugin_package.zip` file)
 2. Open Caido and go to the Plugins page.
 3. Click on the "Install Package" button.
 4. Select the downloaded `plugin_package.zip` file
